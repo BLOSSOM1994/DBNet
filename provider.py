@@ -134,8 +134,10 @@ class Provider:
             if not self.cache_train:
                 print ("Loading training data ...")
                 for i in range(self.num_train):
-                    with Image.open(self.X_train1[i]) as img:
-                        self.x_train1.append(scipy.misc.imresize(img, shape) / 255.0)
+                    with Image.open(self.X_train1[i]).resize(shape) as img:
+                        self.x_train1.append(np.array(img, dtype=float) / 255.0)
+                    #with Image.open(self.X_train1[i]) as img:
+                        #self.x_train1.append(scipy.misc.imresize(img, shape) / 255.0)
                     # too many opened files
                     """
                     self.x_train1.append(scipy.misc.imresize(scipy.misc.imread(
