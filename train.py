@@ -8,7 +8,11 @@ import numpy as np
 import scipy
 
 import provider
-import tensorflow as tf
+
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
+
 import keras
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
