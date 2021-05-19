@@ -25,10 +25,12 @@ def natural_keys(text):
     return [ atoi(c) for c in re.split('(\d+)', text) ]
 
 # Data providers for dbnet-2018 data
+
+#/content/drive/MyDrive
 class Provider:
-    def __init__(self, train_dir='data/dbnet-2018/train/',
-                 val_dir='data/dbnet-2018/val/',
-                 test_dir="data/dbnet-2018/test/"):
+    def __init__(self, train_dir='/content/drive/MyDrive/dbnet-2018/train/',
+                 val_dir='/content/drive/MyDrive/dbnet-2018/val/',
+                 test_dir="/content/drive/MyDrive/dbnet-2018/test/"):
 
         self.__initialize__(train_dir, val_dir, test_dir)
         self.read()
